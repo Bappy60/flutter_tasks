@@ -8,13 +8,11 @@ class CommonScreen extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      backgroundColor: Colors.blueGrey,
+      backgroundColor: Colors.cyanAccent.shade100,
       body: SafeArea(
-        child: Center(
-          child: Padding(
-            padding: const EdgeInsets.all(30.0),
-            child: childWidget,
-          ),
+        child: Padding(
+          padding: const EdgeInsets.all(15.0),
+          child: childWidget,
         ),
       ),
     );

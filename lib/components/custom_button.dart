@@ -32,8 +32,7 @@ class CustomButton extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return CommonScreen(
-      childWidget: ElevatedButton(
+    return ElevatedButton(
         onPressed: onPressed,
         style: buttonStyle,
         child: Row(
@@ -64,7 +63,6 @@ class CustomButton extends StatelessWidget {
             ),
           ],
         ),
-      ),
-    );
+      );
   }
 }
