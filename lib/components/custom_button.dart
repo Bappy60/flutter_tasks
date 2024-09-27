@@ -8,6 +8,7 @@ class CustomButton extends StatelessWidget {
   final Color iconColor;
   final double iconSize;
   final double textPadding;
+  final ButtonStyle buttonStyle;
   final void Function() onPressed;
 
   final IconData? leftIcon;
@@ -23,6 +24,7 @@ class CustomButton extends StatelessWidget {
     required this.iconColor,
     required this.iconSize,
     required this.textPadding,
+    required this.buttonStyle,
     this.leftIcon,
     this.rightIcon,
   });
@@ -37,6 +39,7 @@ class CustomButton extends StatelessWidget {
             padding: const EdgeInsets.all(30.0),
             child: ElevatedButton(
               onPressed: onPressed,
+              style: buttonStyle,
               child: Row(
                 mainAxisAlignment: MainAxisAlignment.center,
                 children: [
