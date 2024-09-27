@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:flutter_tasks/components/common_screen.dart';
 
 class CustomButton extends StatelessWidget {
   final String text;
@@ -31,45 +32,37 @@ class CustomButton extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return Scaffold(
-      backgroundColor: Colors.blueGrey,
-      body: SafeArea(
-        child: Center(
-          child: Padding(
-            padding: const EdgeInsets.all(30.0),
-            child: ElevatedButton(
-              onPressed: onPressed,
-              style: buttonStyle,
-              child: Row(
-                mainAxisAlignment: MainAxisAlignment.center,
-                children: [
-                  Icon(
-                    leftIcon,
-                    color: iconColor,
-                    size: iconSize,
-                  ),
-                  SizedBox(width: textPadding),
-                  Expanded(
-                    child: Text(
-                      text,
-                      overflow: shouldOverflow ? TextOverflow.ellipsis : null,
-                      style: TextStyle(
-                        fontSize: fontSize.toDouble(),
-                        color: textColor,
-                      ),
-                      textAlign: TextAlign.center,
-                    ),
-                  ),
-                  SizedBox(width: textPadding),
-                  Icon(
-                    rightIcon,
-                    color: iconColor,
-                    size: iconSize,
-                  ),
-                ],
+    return CommonScreen(
+      childWidget: ElevatedButton(
+        onPressed: onPressed,
+        style: buttonStyle,
+        child: Row(
+          mainAxisAlignment: MainAxisAlignment.center,
+          children: [
+            Icon(
+              leftIcon,
+              color: iconColor,
+              size: iconSize,
+            ),
+            SizedBox(width: textPadding),
+            Expanded(
+              child: Text(
+                text,
+                overflow: shouldOverflow ? TextOverflow.ellipsis : null,
+                style: TextStyle(
+                  fontSize: fontSize.toDouble(),
+                  color: textColor,
+                ),
+                textAlign: TextAlign.center,
               ),
             ),
-          ),
+            SizedBox(width: textPadding),
+            Icon(
+              rightIcon,
+              color: iconColor,
+              size: iconSize,
+            ),
+          ],
         ),
       ),
     );
