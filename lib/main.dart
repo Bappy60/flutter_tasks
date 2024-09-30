@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_tasks/components/common_screen.dart';
+import 'package:flutter_tasks/components/grid_view_image_cell.dart';
 import 'package:flutter_tasks/components/image_cell.dart';
 import 'components/custom_button.dart';
 
@@ -70,7 +71,11 @@ class MyApp extends StatelessWidget {
                 padding: const EdgeInsets.all(8.0),
                 children: _generateListCellArray(),
               ),
-            )
+            ),
+            const SizedBox(
+              height: 10,
+            ),
+            const GridViewImage(),
           ],
         ),
       ),
