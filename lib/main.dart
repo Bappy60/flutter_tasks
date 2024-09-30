@@ -49,7 +49,7 @@ class MyApp extends StatelessWidget {
                 elevation: WidgetStateProperty.all(5),
                 // Shadow depth (elevation)
                 overlayColor: WidgetStateProperty.resolveWith<Color?>(
-                      (states) {
+                  (states) {
                     if (states.contains(WidgetState.pressed)) {
                       return Colors.blueAccent
                           .withOpacity(0.3); // Button effect on press
@@ -68,68 +68,7 @@ class MyApp extends StatelessWidget {
               child: ListView(
                 shrinkWrap: true,
                 padding: const EdgeInsets.all(8.0),
-                children: const [
-                  ImageCell(
-                    userName: 'Bappy',
-                    imgPath: 'assets/images/bappy_profile.jpg',
-                  ),
-                  ImageCell(
-                    userName: 'Kawsar',
-                    imgPath: 'assets/images/bappy_profile.jpg',
-                  ),
-                  ImageCell(
-                    userName: 'Kawsar',
-                    imgPath: 'assets/images/bappy_profile.jpg',
-                  ),
-                  ImageCell(
-                    userName: 'Kawsar',
-                    imgPath: 'assets/images/bappy_profile.jpg',
-                  ),
-                  ImageCell(
-                    userName: 'Kawsar',
-                    imgPath: 'assets/images/bappy_profile.jpg',
-                  ),
-                  ImageCell(
-                    userName: 'Kawsar',
-                    imgPath: 'assets/images/bappy_profile.jpg',
-                  ),
-                  ImageCell(
-                    userName: 'Kawsar',
-                    imgPath: 'assets/images/bappy_profile.jpg',
-                  ),
-                  ImageCell(
-                    userName: 'Kawsar',
-                    imgPath: 'assets/images/bappy_profile.jpg',
-                  ),
-                  ImageCell(
-                    userName: 'Kawsar',
-                    imgPath: 'assets/images/bappy_profile.jpg',
-                  ),
-                  ImageCell(
-                    userName: 'Kawsar',
-                    imgPath: 'assets/images/bappy_profile.jpg',
-                  ),
-                  ImageCell(
-                    userName: 'Kawsar',
-                    imgPath: 'assets/images/bappy_profile.jpg',
-                  ),
-                  ImageCell(
-                    userName: 'Kawsar',
-                    imgPath: 'assets/images/bappy_profile.jpg',
-                  ),
-                  ImageCell(
-                    userName: 'Kawsar',
-                    imgPath: 'assets/images/bappy_profile.jpg',
-                  ),
-                  ImageCell(
-                    userName: 'Kawsar',
-                    imgPath: 'assets/images/bappy_profile.jpg',
-                  ),
-                  ImageCell(
-                    userName: 'Kawsar',
-                    imgPath: 'assets/images/bappy_profile.jpg',
-                  ),
-                ],
+                children: _generateListCellArray(),
               ),
             )
           ],
@@ -140,5 +79,17 @@ class MyApp extends StatelessWidget {
 
   void _handleClick() {
     print('Button pressed');
+  }
+
+  List<ImageCell> _generateListCellArray() {
+    List<ImageCell> imageCells = [];
+    for (int i = 0; i < 100; i++) {
+      var userName = 'Kawsar_$i';
+      imageCells.add(ImageCell(
+        userName: userName,
+        imgPath: 'assets/images/bappy_profile.jpg',
+      ));
+    }
+    return imageCells;
   }
 }
